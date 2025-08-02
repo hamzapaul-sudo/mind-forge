@@ -43,9 +43,12 @@ mind-forge/
    docker compose up --build
    ```
 
-   The Ollama container will automatically pull the required model (like `mistral`).
+   ⚠️ Before using text generation, download a model manually (e.g., mistral):
+   ```bash
+   docker exec -it ollama ollama pull mistral
+   ```
 
-3. Make a test call:
+4. Make a test call:
    ```bash
    curl -X POST http://localhost:4004/api/text/generate \
      -H "Content-Type: application/json" \
